@@ -22,7 +22,9 @@
 
   <default revision="refs/tags/android-5.1.1_r10"
            remote="aosp"
-           sync-j="4" />
+           sync-j="4" 
+           sync-c="true" 
+           sync-f="true" />
 
   <project path="build" name="slim_build" remote="rnx" revision="lp5.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
