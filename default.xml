@@ -4,26 +4,36 @@
            fetch="https://android.googlesource.com/" />
 
   <remote  name="github"
-           fetch="git://github.com/"
-           review="https://review.slimroms.eu/"/>
+           fetch="git://github.com/" />
+  <remote  name="tm"
+	fetch="https://github.com/TheMuppets/" />
+  <remote  name="rnx"
+	fetch="https://github.com/RadonX-ROM/" />
+  <remote  name="gh"
+	fetch="https://github.com/" />
+  <remote  name="bb"
+	fetch="https://bitbucket.org/" />
+  <remote  name="gl"
+	fetch="https://gitlab.com/" />
+  <remote  name="th"
+	fetch="https://github.com/TeamHorizon/" />
 
   <default revision="refs/tags/android-5.1.1_r10"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="SlimRoms/android_build" remote="github" revision="lp5.1" >
+  <project path="build" name="slim_build" remote="rnx" revision="lp5.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="SlimRoms/android_art" remote="github" revision="lp5.1"  />
-  <project path="bionic" name="SlimRoms/android_bionic" remote="github" revision="lp5.1" />
+  <project path="bionic" name="bionic" groups="pdk" remote="rnx" revision="lp-mr1" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/recovery" name="SlimRoms/bootable_recovery" remote="github" revision="lp5.1" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs" />
   <project path="developers/build" name="platform/developers/build" />
   <project path="developers/demos" name="platform/developers/demos" />
-  <project path="developers/docs" name="platform/developers/docs" />
   <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="SlimRoms/android_development" remote="github" revision="lp5.1" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs" />
@@ -46,7 +56,6 @@
   <project path="device/qcom/common" name="SlimRoms/device_qcom_common" remote="github" revision="lp5.1" />
   <project path="device/qcom/sepolicy" name="SlimRoms/device_qcom_sepolicy" remote="github" revision="lp5.1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
-  <project path="docs/source.android.com" name="platform/docs/source.android.com" groups="pdk-cw-fs" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/android-clat" name="platform/external/android-clat" groups="pdk-cw-fs" />
   <project path="external/android-visualizer" name="SlimRoms/android_external_android-visualizer" remote="github" revision="lp5.1" />
@@ -105,7 +114,7 @@
   <project path="external/chromium_org/v8" name="platform/external/chromium_org/v8" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" />
   <project path="external/cmockery" name="platform/external/cmockery" />
-  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
+  <project path="external/compiler-rt" name="external_compiler-rt" remote="rnx" revision="lp-mr1" groups="pdk" />
   <project path="external/conscrypt" name="platform/external/conscrypt" groups="pdk-cw-fs" />
   <project path="external/connectivity" name="SlimRoms/android_external_connectivity" remote="github" revision="lp5.1" />
   <project path="external/deqp" name="platform/external/deqp" />
@@ -127,6 +136,7 @@
   <project path="external/eyes-free" name="platform/external/eyes-free" groups="pdk-cw-fs" />
   <project path="external/f2fs-tools" name="SlimRoms/android_external_f2fs-tools" remote="github" revision="lp5.1" />
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
+  <project path="external/ffmpeg" name="SlimRoms/android_external_ffmpeg" remote="github" revision="lp5.1" />
   <project path="external/fio" name="platform/external/fio" />
   <project path="external/flac" name="platform/external/flac" groups="pdk" />
   <project path="external/fonttools" name="platform/external/fonttools" />
@@ -137,6 +147,7 @@
   <project path="external/genext2fs" name="platform/external/genext2fs" groups="pdk-cw-fs" />
   <project path="external/giflib" name="platform/external/giflib" groups="pdk-cw-fs,qcom_msm8x26" />
   <project path="external/glide" name="platform/external/glide" />
+  <project path="external/google/google_play_services" name="SlimRoms/android_external_google_google_play_services" remote="github" revision="lp5.1" />
   <project path="external/google-diff-match-patch" name="platform/external/google-diff-match-patch" groups="pdk-cw-fs" />
   <project path="external/google-fonts/coming-soon" name="platform/external/google-fonts/coming-soon" groups="pdk-cw-fs" />
   <project path="external/google-fonts/dancing-script" name="platform/external/google-fonts/dancing-script" groups="pdk-cw-fs" />
@@ -161,7 +172,7 @@
   <project path="external/jhead" name="platform/external/jhead" groups="pdk" />
   <project path="external/jline" name="platform/external/jline" groups="notdefault,tradefed" />
   <project path="external/jmdns" name="platform/external/jmdns" groups="pdk-cw-fs" />
-  <project path="external/jpeg" name="SlimRoms/android_external_jpeg" remote="github" revision="lp5.1" />
+  <project path="external/jpeg" name="external_jpeg" groups="pdk" remote="rnx" revision="lp-mr1" />
   <project path="external/jsilver" name="platform/external/jsilver" groups="pdk-cw-fs,tradefed" />
   <project path="external/jsmn" name="platform/external/jsmn" groups="pdk" />
   <project path="external/jsoncpp" name="platform/external/jsoncpp" groups="pdk-cw-fs" />
@@ -185,7 +196,7 @@
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" />
   <project path="external/libpcap" name="platform/external/libpcap" groups="pdk,pdk-cw-fs" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk-cw-fs" />
-  <project path="external/libpng" name="platform/external/libpng" groups="pdk" />
+  <project path="external/libpng" name="external_libpng" groups="pdk" remote="rnx" revision="lp-mr1" />
   <project path="external/libseccomp-helper" name="platform/external/libseccomp-helper" groups="pdk-cw-fs" />
   <project path="external/libselinux" name="platform/external/libselinux" groups="pdk" />
   <project path="external/libsepol" name="SlimRoms/android_external_libsepol" remote="github" revision="lp5.1" />
@@ -244,14 +255,15 @@
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
   <project path="external/qemu" name="platform/external/qemu" groups="pdk-cw-fs" />
   <project path="external/qemu-pc-bios" name="platform/external/qemu-pc-bios" groups="pdk-cw-fs" />
+  <project path="external/qrngd" name="SlimRoms/android_external_qrngd" remote="github" revision="lp5.1" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk-cw-fs" />
   <project path="external/replicaisland" name="platform/external/replicaisland" groups="pdk-cw-fs" />
   <project path="external/robolectric" name="platform/external/robolectric" groups="pdk-cw-fs" />
   <project path="external/safe-iop" name="platform/external/safe-iop" groups="pdk" />
   <project path="external/scrypt" name="platform/external/scrypt" groups="pdk" />
-  <project path="external/sepolicy" name="SlimRoms/android_external_sepolicy" remote="github" revision="lp5.1" />
+  <project path="external/sepolicy" name="external_sepolicy" groups="pdk" remote="rnx" revision="lp-mr1" />
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk-cw-fs,qcom_msm8x26" />
-  <project path="external/skia" name="SlimRoms/android_external_skia" remote="github" revision="lp5.1" />
+  <project path="external/skia" name="external_skia" groups="pdk-cw-fs,qcom_msm8x26" remote="rnx" revision="lp-mr1" />
   <project path="external/smack" name="platform/external/smack" groups="pdk-cw-fs" />
   <project path="external/smali" name="platform/external/smali" groups="pdk-cw-fs" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
@@ -259,7 +271,7 @@
   <project path="external/sqlite" name="platform/external/sqlite" groups="pdk" />
   <project path="external/srec" name="platform/external/srec" groups="pdk-cw-fs" />
   <project path="external/srtp" name="platform/external/srtp" groups="pdk-cw-fs" />
-  <project path="external/stlport" name="platform/external/stlport" groups="pdk" />
+  <project path="external/stagefright-plugins" name="SlimRoms/android_external_stagefright-plugins" remote="github" revision="lp5.1" />  <project path="external/stlport" name="platform/external/stlport" groups="pdk" />
   <project path="external/strace" name="platform/external/strace" groups="pdk-cw-fs" />
   <project path="external/stressapptest" name="platform/external/stressapptest" groups="pdk-cw-fs" />
   <project path="external/svox" name="platform/external/svox" groups="pdk-cw-fs" />
@@ -315,14 +327,15 @@
   <project path="frameworks/opt/timezonepicker" name="SlimRoms/frameworks_opt_timezonepicker" remote="github" revision="lp5.1" />
   <project path="frameworks/opt/vcard" name="platform/frameworks/opt/vcard" groups="pdk-cw-fs" />
   <project path="frameworks/opt/widget" name="platform/frameworks/opt/widget" groups="pdk-cw-fs" />
-  <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
+  <project path="frameworks/rs" name="frameworks_rs" remote="rnx" revision="lp-mr1" groups="pdk" />
   <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs" />
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs" />
-  <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs" />
+  <project path="frameworks/rs" name="frameworks_rs" remote="rnx" revision="lp-mr1" groups="pdk" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs" />
   <project path="hardware/akm" name="platform/hardware/akm" />
   <project path="hardware/broadcom/libbt" name="SlimRoms/hardware_broadcom_libbt" remote="github" revision="lp5.1" />
   <project path="hardware/broadcom/wlan" name="SlimRoms/hardware_broadcom_wlan" remote="github" revision="lp5.1" />
+  <project path="hardware/cm" name="SlimRoms/hardware_cm" remote="github" revision="lp5.1" />
   <project path="hardware/intel/audio_media" name="platform/hardware/intel/audio_media" groups="intel" />
   <project path="hardware/intel/bootstub" name="platform/hardware/intel/bootstub" groups="intel" />
   <project path="hardware/intel/common/bd_prov" name="platform/hardware/intel/common/bd_prov" groups="intel" />
@@ -350,6 +363,7 @@
   <project path="hardware/qcom/audio-caf/msm8916" name="SlimRoms/hardware_qcom_audio" remote="github" revision="lp5.1-caf-8916" />
   <project path="hardware/qcom/audio-caf/msm8960" name="SlimRoms/hardware_qcom_audio" remote="github" revision="lp5.1-caf-8960" />
   <project path="hardware/qcom/audio-caf/msm8974" name="SlimRoms/hardware_qcom_audio" remote="github" revision="lp5.1-caf-8974" />
+  <project path="hardware/qcom/audio-caf/msm8974-vanilla" name="android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="th" revision="lp-mr1-caf-bacon" />
   <project path="hardware/qcom/audio-caf/msm8994" name="SlimRoms/hardware_qcom_audio" remote="github" revision="lp5.1-caf-8994" />
   <project path="hardware/qcom/bt" name="SlimRoms/hardware_qcom_bt" remote="github" revision="lp5.1" />
   <project path="hardware/qcom/display" name="SlimRoms/hardware_qcom_display" remote="github" revision="lp5.1" />
@@ -360,6 +374,7 @@
   <project path="hardware/qcom/display-caf/msm8916" name="SlimRoms/hardware_qcom_display" remote="github" revision="lp5.1-caf-8916" />
   <project path="hardware/qcom/display-caf/msm8960" name="SlimRoms/hardware_qcom_display" remote="github" revision="lp5.1-caf-8960" />
   <project path="hardware/qcom/display-caf/msm8974" name="SlimRoms/hardware_qcom_display" remote="github" revision="lp5.1-caf-8974" />
+  <project path="hardware/qcom/display-caf/msm8974-vanilla" name="android_hardware_qcom_display" groups="qcom,qcom_display" remote="th" revision="lp-mr1-caf-bacon" />
   <project path="hardware/qcom/display-caf/msm8994" name="SlimRoms/hardware_qcom_display" remote="github" revision="lp5.1-caf-8994" />
   <project path="hardware/qcom/fm" name="SlimRoms/hardware_qcom_fm" remote="github" revision="lp5.1" />
   <project path="hardware/qcom/gps" name="SlimRoms/hardware_qcom_gps" remote="github" revision="lp5.1" />
@@ -372,6 +387,7 @@
   <project path="hardware/qcom/media-caf/msm8916" name="SlimRoms/hardware_qcom_media" remote="github" revision="lp5.1-caf-8916" />
   <project path="hardware/qcom/media-caf/msm8960" name="SlimRoms/hardware_qcom_media" remote="github" revision="lp5.1-caf-8960" />
   <project path="hardware/qcom/media-caf/msm8974" name="SlimRoms/hardware_qcom_media" remote="github" revision="lp5.1-caf-8974" />
+  <project path="hardware/qcom/media-caf/msm8974-vanilla" name="android_hardware_qcom_media" groups="qcom" remote="th" revision="lp-mr1-caf-bacon" /> 
   <project path="hardware/qcom/media-caf/msm8994" name="SlimRoms/hardware_qcom_media" remote="github" revision="lp5.1-caf-8994" />
   <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960" />
   <project path="hardware/qcom/msm8x26" name="platform/hardware/qcom/msm8x26" groups="qcom_msm8x26" />
@@ -384,10 +400,6 @@
   <project path="hardware/ril" name="SlimRoms/hardware_ril" remote="github" revision="lp5.1" />
   <project path="hardware/ril-caf" name="SlimRoms/hardware_ril" remote="github" revision="lp5.1-caf" />
   <project path="hardware/samsung_slsi/exynos5" name="SlimRoms/hardware_samsung_slsi_exynos5" remote="github" revision="lp5.1" />
-  <project path="hardware/ti/omap3" name="SlimRoms/hardware_ti_omap3" remote="github" revision="lp5.1" />
-  <project path="hardware/ti/omap4xxx" name="SlimRoms/hardware_ti_omap4xxx" remote="github" revision="lp5.1" />
-  <project path="hardware/ti/wlan" name="SlimRoms/hardware_ti_wlan" remote="github" revision="lp5.1" />
-  <project path="hardware/ti/wpan" name="SlimRoms/hardware_ti_wpan" remote="github" revision="lp5.1" />
   <project path="libcore" name="SlimRoms/android_libcore" remote="github" revision="lp5.1" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" />
@@ -403,6 +415,7 @@
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs" />
   <project path="packages/apps/Contacts" name="SlimRoms/packages_apps_Contacts" remote="github" revision="lp5.1" />
   <project path="packages/apps/ContactsCommon" name="SlimRoms/packages_apps_ContactsCommon" remote="github" revision="lp5.1" />
+  <project path="packages/apps/DashClock" name="SlimRoms/packages_apps_DashClock" remote="github" revision="lp5.1" />
   <project path="packages/apps/DeskClock" name="SlimRoms/packages_apps_DeskClock" remote="github" revision="lp5.1" />
   <project path="packages/apps/Dialer" name="SlimRoms/packages_apps_Dialer" remote="github" revision="lp5.1" />
   <project path="packages/apps/Email" name="SlimRoms/packages_apps_Email" remote="github" revision="lp5.1" />
@@ -425,7 +438,11 @@
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/Settings" name="SlimRoms/packages_apps_Settings" remote="github" revision="lp5.1" />
+  <project path="packages/apps/SlimFileManager" name="SlimRoms/packages_apps_SlimFileManager" remote="github" revision="lp5.1" />
+  <project path="packages/apps/SlimLauncher" name="SlimRoms/packages_apps_SlimLauncher" remote="github" revision="lp5.1" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
+  <project path="packages/apps/SnapdragonAudio" name="packages_apps_SnapdragonAudio" remote="rnx" revision="lp-mr1" />
+  <project path="packages/apps/SnapdragonCamera" name="packages_apps_SnapdragonCamera" remote="rnx" revision="lp-mr1" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
@@ -463,53 +480,26 @@
   <project path="packages/wallpapers/PhaseBeam" name="platform/packages/wallpapers/PhaseBeam" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
   <project path="prebuilts/android-emulator" name="platform/prebuilts/android-emulator" clone-depth="1" />
-  <project path="prebuilts/clang/darwin-x86/3.1" name="platform/prebuilts/clang/darwin-x86/3.1" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/3.2" name="platform/prebuilts/clang/darwin-x86/3.2" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/arm/3.3" name="platform/prebuilts/clang/darwin-x86/arm/3.3" groups="arm,darwin,pdk-cw-fs" />
-  <project path="prebuilts/clang/darwin-x86/host/3.4" name="platform/prebuilts/clang/darwin-x86/host/3.4" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/host/3.5" name="platform/prebuilts/clang/darwin-x86/host/3.5" groups="pdk,darwin" />
-  <project path="prebuilts/clang/darwin-x86/mips/3.3" name="platform/prebuilts/clang/darwin-x86/mips/3.3" groups="darwin,mips,pdk-cw-fs" />
-  <project path="prebuilts/clang/darwin-x86/x86/3.3" name="platform/prebuilts/clang/darwin-x86/x86/3.3" groups="darwin,pdk-cw-fs,x86" />
-  <project path="prebuilts/clang/linux-x86/3.1" name="platform/prebuilts/clang/linux-x86/3.1" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/3.2" name="platform/prebuilts/clang/linux-x86/3.2" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/arm/3.3" name="platform/prebuilts/clang/linux-x86/arm/3.3" groups="arm,linux,pdk-cw-fs" />
-  <project path="prebuilts/clang/linux-x86/host/3.4" name="platform/prebuilts/clang/linux-x86/host/3.4" groups="pdk,linux" />
   <project path="prebuilts/clang/linux-x86/host/3.5" name="platform/prebuilts/clang/linux-x86/host/3.5" groups="pdk,linux" />
-  <project path="prebuilts/clang/linux-x86/mips/3.3" name="platform/prebuilts/clang/linux-x86/mips/3.3" groups="linux,mips,pdk-cw-fs" />
-  <project path="prebuilts/clang/linux-x86/x86/3.3" name="platform/prebuilts/clang/linux-x86/x86/3.3" groups="linux,pdk-cw-fs,x86" />
+  <project path="prebuilts/clang/linux-x86/host/3.5.2" name="Joe_maples/prebuilts_clang_linux-x86_host_3.5.git" remote="bb" revision="master" groups="pdk,linux" />
+  <project path="prebuilts/clang/linux-x86/host/3.6-qcom" name="prebuilts_clang_linux-x86_host_3.6-qcom" remote="rnx" revision="master" groups="pdk,linux" />
   <project path="prebuilts/devtools" name="platform/prebuilts/devtools" />
   <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" groups="pdk" />
   <project path="prebuilts/eclipse-build-deps" name="platform/prebuilts/eclipse-build-deps" groups="notdefault,eclipse" />
   <project path="prebuilts/eclipse-build-deps-sources" name="platform/prebuilts/eclipse-build-deps-sources" groups="notdefault,eclipse" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" name="SlimRoms/android_prebuilts_gcc_darwin-x86_aarch64_aarch64-linux-android-4.9" remote="github" revision="lp5.1" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.8" groups="pdk,darwin,arm" />
-  <project path="prebuilts/gcc/darwin-x86/host/headers" name="platform/prebuilts/gcc/darwin-x86/host/headers" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" groups="pdk,darwin" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.8" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.8" groups="pdk,darwin,mips" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.8" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" revision="master" groups="pdk,darwin,x86" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.8" groups="pdk,linux,arm" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="SlimRoms/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="github" revision="lp5.1" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="xanaxdroid/arm-eabi-4.9.git" remote="bb" revision="sabermod" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.2" name="xanaxdroid/arm-eabi-5.2.git" remote="bb" revision="sabermod" groups="pdk,linux,arm" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8" groups="pdk,linux,arm" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.8" groups="pdk,linux" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8" />
-  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.9" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.8" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/mips/mips64el-linux-android-4.8" groups="pdk,linux,mips" />
-  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" groups="pdk,linux,x86" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="xanaxdroid/arm-linux-androideabi-4.9.git" remote="bb" revision="sabermod" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" revision="master" groups="pdk,linux" />
   <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" groups="pdk,linux,x86" />
   <project path="prebuilts/gradle-plugin" name="platform/prebuilts/gradle-plugin" groups="pdk-cw-fs" />
   <project path="prebuilts/libs/libedit" name="platform/prebuilts/libs/libedit" groups="pdk-cw-fs" />
   <project path="prebuilts/maven_repo/android" name="platform/prebuilts/maven_repo/android" groups="pdk-cw-fs" />
   <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk,tradefed" />
-  <project path="prebuilts/ndk" name="platform/prebuilts/ndk" groups="pdk" />
-  <project path="prebuilts/python/darwin-x86/2.7.5" name="platform/prebuilts/python/darwin-x86/2.7.5" groups="darwin,pdk,pdk-cw-fs" />
+  <project path="prebuilts/ndk" name="prebuilts_ndk" remote="rnx" revision="lp-mr1" groups="pdk" />
   <project path="prebuilts/python/linux-x86/2.7.5" name="platform/prebuilts/python/linux-x86/2.7.5" groups="linux,pdk,pdk-cw-fs" />
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" clone-depth="1" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk,tradefed" />
@@ -539,37 +529,17 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
 
-  <project path="platform_manifest" name="SlimRoms/platform_manifest" remote="github" revision="lp5.1" />
+  <!-- Manifest -->
+  <project path="manifest" name="SlimRoms/platform_manifest" remote="github" revision="lp5.1" />
 
-  <!-- New Additions for slim -->
-  <project path="vendor/slim" name="SlimRoms/vendor_slim" remote="github" revision="lp5.1" />
-
-  <!-- Slim file manager -->
-  <project path="packages/apps/SlimFileManager" name="SlimRoms/packages_apps_SlimFileManager" remote="github" revision="lp5.1" />
-
-  <!-- SlimLauncher -->
-  <project path="packages/apps/SlimLauncher" name="SlimRoms/packages_apps_SlimLauncher" remote="github" revision="lp5.1" />
-
-  <!--Power Hal -->
-  <project path="hardware/cm" name="SlimRoms/hardware_cm" remote="github" revision="lp5.1" />
-
-  <!-- Slim toolchain gcc and linaro -->
-  <project path="prebuilt" name="SlimRoms/android_prebuilt" remote="github" revision="lp5.1" />
-
-  <!-- DashClock widget -->
-  <project path="packages/apps/DashClock" name="SlimRoms/packages_apps_DashClock" remote="github" revision="lp5.1" />
-
-  <!-- Google play services -->
-  <project path="external/google/google_play_services" name="SlimRoms/android_external_google_google_play_services" remote="github" revision="lp5.1" />
-
-  <!-- SamsungServiceMode -->
-  <project path="packages/apps/SamsungServiceMode" name="SlimRoms/packages_apps_SamsungServiceMode" remote="github" revision="lp5.1" />
-
-  <!-- qrngd -->
-  <project path="external/qrngd" name="SlimRoms/android_external_qrngd" remote="github" revision="lp5.1" />
-
-  <!-- ffmpeg -->
-  <project path="external/ffmpeg" name="SlimRoms/android_external_ffmpeg" remote="github" revision="lp5.1" />
-  <project path="external/stagefright-plugins" name="SlimRoms/android_external_stagefright-plugins" remote="github" revision="lp5.1" />
-
+  <!-- Vendors -->
+  <project path="vendor/slim" name="vendor_slim" remote="rnx" revision="lp5.1" />
+  <project path="vendor/broadcom" name="proprietary_vendor_broadcom" remote="tm" revision="cm-12.1" />
+  <project path="vendor/elan" name="proprietary_vendor_elan" remote="tm" revision="cm-12.1" />
+  <project path="vendor/invensense" name="proprietary_vendor_invensense" remote="th" revision="lp-mr1" />
+  <project path="vendor/nxp" name="proprietary_vendor_nxp" remote="tm" revision="cm-12.1" />
+  <project path="vendor/widevine" name="proprietary_vendor_widevine" remote="th" revision="lp-mr1" />
+  <project path="vendor/sm" name="vendor_sm" remote="rnx" revision="lp-mr1" />
+  <project path="vendor/snapdragon" name="vendor_snapdragon" remote="rnx" revision="lp-mr1" />
+  
 </manifest>
