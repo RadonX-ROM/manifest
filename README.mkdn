@@ -1,61 +1,44 @@
-Welcome to SlimRoms
-===================
-
+RadonX
+===========
+Elemental Simplicity, Radioactive Power.
 
 Getting Started
 ---------------
-
-To get started with SlimLP, you'll need to get familiar with
-[Git and Repo](http://source.android.com/download/using-repo).
-
-Please take note that we have two main line branches depending on
-which hardware base your phone is working.
-
-If you have a qcom powered device which needs CodeAuroraForum (CAF)
-trees please us the lp5.0-caf branch which pulls for the effected packages
-the correct caf version for you.
-
-To initialize your local repository using the SlimLP trees, use this command:
+To get started with the RadonX source, you'll need to get
+familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 
-	repo init -u git://github.com/SlimRoms/platform_manifest.git -b lp5.1
+Create the Directories
+----------------------
+
+You will need to set up some directories in your build environment.
+
+To create them run:
+
+    mkdir -p ~/bin
+    mkdir -p ~/rnx
 
 
+Install the Repository
+----------------------
 
-Then sync up with this command:
+Enter the following to download the "repo" binary and make it executable:
 
-	repo sync
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+
+You may need to reboot for these changes to take effect.
+Now enter the following to initialize the repository:
+
+    cd ~/rnx
 
 
+Repositories:
+---------------
 
-Submitting Patches
-------------------
+For initializing repo use:
 
-We're open source, and patches are always welcome!
-You can send patches by using these commands:
+    repo init -u https://github.com/RadonX-ROM/manifest.git -b lp-mr1
 
-    cd <workspace>
-    repo start <branch> SlimRoms/<project>
-    cd <project>
-    git add -A
-    git commit -a
-    cd <workspace>
-    repo upload SlimRoms/<project>
+sync repo:
 
-Commit your patches in a single commit.
-
-Squash multiple commit using this command:
-
-	git rebase -i HEAD~<# of commits>
-
-If you are going to make extra additions, just repeat steps (Don't repo start again), but instead of
-
-	git commit -a
-
-use
-
-	git commit --amend
-
-Gerrit will recognize it as a new patchset.
-
-To view the status of your and others patches, visit [SlimRoms Code Review](http://review.slimroms.eu)
+    repo sync -j2 | -j4 |-j8 | -j32 (# of CPUs x2)
