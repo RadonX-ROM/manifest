@@ -20,13 +20,13 @@
   <remote  name="cm"
 	fetch="https://github.com/CyanogenMod/" />
 
-  <default revision="refs/tags/android-5.1.1_r10"
+  <default revision="refs/tags/android-5.1.1_r13"
            remote="aosp"
            sync-j="4" 
            sync-c="true" 
            sync-f="true" />
 
-  <project path="build" name="slim_build" remote="rnx" revision="lp5.1" >
+  <project path="build" name="build" remote="rnx" revision="lp-mr1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
@@ -59,7 +59,7 @@
   <project path="external/arduino" name="platform/external/arduino" groups="pdk-cw-fs" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs" />
-  <project path="external/bluetooth/bluedroid" name="SlimRoms/android_external_bluetooth_bluedroid" groups="pdk" remote="github" revision="lp5.1" />
+  <project path="external/bluetooth/bluedroid" name="external_bluetooth_bluedroid" groups="pdk" remote="rnx" revision="lp-mr1" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/busybox" name="SlimRoms/android_external_busybox" remote="github" revision="lp5.1" />
@@ -520,7 +520,7 @@
   <project path="manifest" name="manifest" remote="rnx" revision="lp-mr1" />
 
   <!-- Vendors -->
-  <project path="vendor/rnx" name="vendor_slim" remote="rnx" revision="lp5.1" />
+  <project path="vendor/rnx" name="vendor_rnx" remote="rnx" revision="lp-mr1" />
   <project path="vendor/broadcom" name="proprietary_vendor_broadcom" remote="tm" revision="cm-12.1" />
   <project path="vendor/elan" name="proprietary_vendor_elan" remote="tm" revision="cm-12.1" />
   <project path="vendor/invensense" name="proprietary_vendor_invensense" remote="th" revision="lp-mr1" />
